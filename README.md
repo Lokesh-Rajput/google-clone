@@ -46,6 +46,3 @@ LinkedIn: https://linkedin.com/in/lokesh-patil3618
 Thank you for reviewing my submission!
 ---
 
-Replace the links with your actual GitHub repo and Netlify URL before submission. This README will show your professionalism and make it easy for evaluators to navigate your work.  
-
-If you want, I can also help you format a **shorter version** or add badges for “React,” “Netlify,” etc. Just ask!
