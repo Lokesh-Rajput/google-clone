@@ -1,0 +1,134 @@
+
+.google-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  position: relative;
+  z-index: 10;
+  
+  // Premium glass effect for header
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.02);
+  
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .header-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    font-weight: 400;
+    
+    // Premium hover effect with subtle gradient
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(45deg, transparent, var(--accent-glow), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    
+    &:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .notifications-btn,
+  .apps-btn,
+  .profile-btn,
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    
+    // Premium ripple effect
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: var(--accent-glow);
+      transform: scale(0);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    &:hover {
+      background-color: var(--hover-bg);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      
+      &::after {
+        transform: scale(1);
+        opacity: 0.1;
+      }
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  .dark-mode-toggle {
+    // Special styling for the theme toggle button
+    background: linear-gradient(45deg, var(--accent-glow), transparent);
+    border: 1px solid var(--search-border);
+    
+    &:hover {
+      background: linear-gradient(45deg, var(--accent-glow), var(--hover-bg));
+      border-color: var(--accent-glow);
+    }
+  }
+  
+  .notifications-btn svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .notifications-btn:hover svg {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .google-header {
+    padding: 15px 20px;
+    
+    .header-left,
+    .header-right {
+      gap: 12px;
+    }
+    
+    .header-link {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+}
